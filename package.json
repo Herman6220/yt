@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "postinstall": "npx lightningcss --version || true"
+    "lint": "eslint"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.31.6",
