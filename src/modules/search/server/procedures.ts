@@ -5,6 +5,27 @@ import { and, desc, eq, getTableColumns, ilike, lt, or } from "drizzle-orm";
 import { z } from "zod";
 
 export const searchRouter = createTRPCRouter({
+    getManySearchSuggestion: baseProcedure
+        .input(
+            z.object({
+                query: z.string().nullish(),
+                limit: z.number().min(1).max(20),
+            })
+        ).query(async ({ input }) => {
+            const { query, limit } = input;
+
+            const data = await db
+                .select({
+                    id: videos.id,
+                    title: videos.title,
+                    thumbnailUrl: videos.thumbnailUrl,
+                })
+                .from(videos)
+                .where(ilike(videos.title, `%${query}%`))
+                .limit(limit)
+
+            return data;        
+        }),
     getMany: baseProcedure
         .input(
             z.object({
