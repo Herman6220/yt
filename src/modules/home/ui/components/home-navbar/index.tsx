@@ -12,7 +12,7 @@ export const HomeNavbar = () => {
             <div className="flex items-center flex-shrink-0">
             <SidebarTrigger />
             <Link prefetch  href="/" className="hidden md:block">
-                <Image src="/yt_logo_fullcolor_almostblack_digital.png" alt="Youtube" width="130" height="100"/>
+                <Image src="/ytlogofull.png" alt="Youtube" width="130" height="100"/>
             </Link>
             </div>
 

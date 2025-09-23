@@ -12,7 +12,7 @@ export const StudioNavbar = () => {
             <div className="flex items-center flex-shrink-0">
             <SidebarTrigger />
             <Link prefetch  href="/studio" className="px-4 hidden md:block">
-                <Image src="/Youtube_Studio_logo.svg" alt="Studio" width="90" height="100"/>
+                <Image src="/ytstudio.svg" alt="Studio" width="90" height="100"/>
             </Link>
             </div>
 
