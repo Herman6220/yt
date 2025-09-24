@@ -33,12 +33,14 @@ const SearchSuggestionModal = ({
       {!isLoading && searchSuggestions && (
         searchSuggestions.map((searchSuggestion) => (
           <Link href={`/search?query=${searchSuggestion.title}`} key={searchSuggestion.id}>
-            <div className="flex justify-between items-center h-10 px-2 py-2 hover:bg-gray-200 rounded-md">
-              <div className="flex gap-1 items-center justify-center">
-              <SearchIcon className="text-gray-500 size-4" />
-              {searchSuggestion.title}
+            <div className="flex gap-1 justify-between items-center h-10 px-2 py-2 hover:bg-gray-200 rounded-md">
+              <div className="flex-1 flex gap-1 items-center justify-start min-w-0">
+              <SearchIcon className="text-gray-500 size-4 shrink-0" />
+              <span className="truncate min-w-0">
+                {searchSuggestion.title}
+              </span>
               </div>
-              <div className="overflow-hidden rounded">
+              <div className="overflow-hidden rounded shrink-0">
                 {searchSuggestion.thumbnailUrl && (<Image src={searchSuggestion.thumbnailUrl} alt="" width={60} height={20} className="object-cover"/>)}
               </div>
             </div>
